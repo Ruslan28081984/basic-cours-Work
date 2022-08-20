@@ -1,11 +1,14 @@
 public class Employee {
 
-    private String  name;
+    private String name;
+    public Employee(int salary) {
+        this.salary = salary;
+    }
 
     private int salary;
 
     private int departament;
-    private  int id;
+    private   int id ;
     public Employee(String name, int salary, int departament) {
         this.name = name;
         this.salary = salary;
