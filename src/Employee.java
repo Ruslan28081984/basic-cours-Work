@@ -1,46 +1,56 @@
 public class Employee {
 
-    private String name;
-    public Employee(int salary) {
+
+    private final int id;
+   private String name;
+   private int departament;
+   private double salary;
+   private static int counter;
+
+    public Employee(String name, int departament, double salary) {
+        this.name = name;
+        this.departament = departament;
         this.salary = salary;
+        id = ++counter;
     }
 
-    private int salary;
+    @Override
+    public String toString() {
+        return "Работник " +
+                "id=" + id + ", имя ='" + name + '\'' + ", отдел =" +
+                departament + ", зарплата =" + salary;
+    }
 
-    private int departament;
-    private   int id ;
-    public Employee(String name, int salary, int departament) {
-        this.name = name;
-        this.salary = salary;
-        this.departament = departament;
-        id ++;
+
+
+
+    public int getId() {
+        return id;
     }
 
     public String getName() {
         return name;
     }
 
-    public int getSalary() {
-        return salary;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public int getDepartament() {
         return departament;
     }
 
-    public int getId() {
-        return id;
-    }
-
-    public void setSalary(int salary) {
-        this.salary = salary;
-    }
-
     public void setDepartament(int departament) {
         this.departament = departament;
     }
 
-    public String toString() {
-        return "имя: " + this.name + " Зарплата: " + this.salary + " Отдел: " + this.departament;
+    public double getSalary() {
+        return salary;
     }
+
+    public void setSalary(double salary) {
+        this.salary = salary;
+    }
+
+
 }
